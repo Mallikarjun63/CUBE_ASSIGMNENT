@@ -8,6 +8,9 @@
   --brand-deep: #064b2a;
   --highlight: #dcece2;
   --warm: #9f6820;
+  --shadow-sm: 0 2px 8px rgba(9,47,31,0.07);
+  --shadow-md: 0 6px 24px rgba(9,47,31,0.10);
+  --radius-card: 16px;
 }
 
 * {
@@ -21,6 +24,9 @@ body {
   background: var(--bg);
   color: var(--ink);
   font-family: "Sora", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
 }
 
@@ -42,27 +48,33 @@ img {
 
 .topbar {
   position: absolute;
-  top: 0.85rem;
-  left: 0;
-  width: 100%;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 3rem);
+  max-width: 1400px;
   z-index: 40;
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 1.25rem;
-  padding: 0.6rem 2.2vw;
-  -webkit-backdrop-filter: none;
-  backdrop-filter: none;
-  background: transparent;
-  border: 0;
+  padding: 0.75rem 1.75rem;
+  -webkit-backdrop-filter: blur(14px) saturate(1.4);
+  backdrop-filter: blur(14px) saturate(1.4);
+  background: rgba(244, 251, 246, 0.55);
+  border: 1px solid rgba(180, 215, 195, 0.45);
+  border-radius: 999px;
+  box-shadow: 0 4px 20px rgba(9, 47, 31, 0.08);
 }
 
 .brand {
   text-decoration: none;
   color: var(--brand);
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  font-weight: 800;
-  letter-spacing: 0.03em;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  font-style: italic;
 }
 
 .nav {
@@ -75,7 +87,27 @@ img {
   text-decoration: none;
   color: #194734;
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: 0.88rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1.5px;
+  background: var(--brand);
+  border-radius: 2px;
+  transition: width 0.25s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
 }
 
 .top-actions {
@@ -100,20 +132,27 @@ img {
   text-decoration: none;
   cursor: pointer;
   color: #fff;
+  font-family: "Sora", sans-serif;
+  font-size: 0.88rem;
   font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   border-radius: 999px;
-  padding: 0.85rem 2rem;
+  padding: 0.9rem 2.2rem;
   background: linear-gradient(135deg, #0b6b3c 0%, #084f2d 55%, #0a7d45 100%);
-  transition: transform 0.2s ease, filter 0.2s ease;
+  box-shadow: 0 4px 14px rgba(11, 107, 60, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
 }
 
 .btn:hover {
   transform: translateY(-2px);
-  filter: brightness(1.05);
+  box-shadow: 0 7px 22px rgba(11, 107, 60, 0.38);
+  filter: brightness(1.06);
 }
 
 .btn-small {
-  padding: 0.7rem 1.35rem;
+  padding: 0.65rem 1.35rem;
+  font-size: 0.82rem;
 }
 
 .menu-toggle {
@@ -196,16 +235,25 @@ main > section:first-child {
 .pill {
   display: inline-block;
   margin-bottom: 1.1rem;
-  background: rgba(3, 89, 42, 0.75);
+  background: rgba(3, 89, 42, 0.72);
   color: #d9f2e4;
   border-radius: 999px;
-  padding: 0.55rem 1rem;
+  padding: 0.42rem 1.1rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
 }
 
 .hero h1 {
-  font-size: clamp(2rem, 6vw, 4.2rem);
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.6rem, 6.5vw, 5rem);
+  font-weight: 600;
   margin: 0.3rem 0 1.2rem;
-  line-height: 1;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
 }
 
 .stats {
@@ -324,14 +372,18 @@ main > section:first-child {
 .product-card {
   background: #f6faf6;
   border: 1px solid #d6e0d7;
-  border-radius: 14px;
-  padding: 1.3rem;
+  border-radius: var(--radius-card);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
 }
 
 .product-card h2 {
   margin: 0 0 0.3rem;
-  font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+  font-size: clamp(1.9rem, 2.8vw, 2.7rem);
   font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
 }
 
 .rating {
@@ -345,7 +397,8 @@ main > section:first-child {
 
 .lead {
   color: #426252;
-  line-height: 1.5;
+  font-size: 0.97rem;
+  line-height: 1.7;
   max-width: 62ch;
 }
 
@@ -495,8 +548,12 @@ main > section:first-child {
 }
 
 .accordion-zone h2 {
-  font-size: clamp(1.8rem, 3vw, 3rem);
-  margin: 0.2rem 0 1rem;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2rem, 3.2vw, 3.2rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  margin: 0.2rem 0 1.2rem;
 }
 
 .accordion-item {
@@ -512,13 +569,20 @@ main > section:first-child {
   border: 0;
   background: #fff;
   color: #193f30;
-  padding: 1rem 1.1rem;
-  font-size: 1.35rem;
-  font-weight: 700;
+  padding: 1rem 1.2rem;
+  font-family: "Sora", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
   text-align: left;
   display: flex;
   justify-content: space-between;
   cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.accordion-head:hover {
+  background: #f2f8f4;
 }
 
 .accordion-body {
@@ -576,8 +640,12 @@ main > section:first-child {
 }
 
 .comparison h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
   margin-top: -0.8rem;
-  font-size: clamp(1.8rem, 3.7vw, 3.1rem);
+  font-size: clamp(2rem, 3.7vw, 3.4rem);
+  letter-spacing: -0.01em;
+  line-height: 1.1;
 }
 
 .table-wrap {
@@ -589,15 +657,28 @@ table {
   margin: 0 auto;
   border-collapse: collapse;
   background: #f6faf6;
-  border-radius: 12px;
+  border-radius: 14px;
   overflow: hidden;
+  box-shadow: var(--shadow-sm);
 }
 
-th,
+th {
+  padding: 1rem 1rem;
+  border-bottom: 1px solid #c8d8cc;
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #2f5643;
+  background: #eef5f0;
+}
+
 td {
-  padding: 0.9rem 0.8rem;
+  padding: 0.85rem 1rem;
   border-bottom: 1px solid #d0dbd2;
   text-align: center;
+  font-size: 0.95rem;
 }
 
 th:first-child,
@@ -636,14 +717,24 @@ td:first-child {
 
 .footer-links h3 {
   grid-column: 1 / -1;
-  margin: 0 0 0.7rem;
-  font-size: 3rem;
+  margin: 0 0 0.9rem;
+  font-size: 3.2rem;
   font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 .footer-links a {
   color: #c9e8d8;
   text-decoration: none;
+  font-size: 0.88rem;
+  letter-spacing: 0.03em;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #fff;
 }
 
 .newsletter p {
