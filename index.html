@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GTG Perfumes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="site-bg"></div>
+  <main id="home">
+    <section class="hero reveal">
+      <header class="topbar">
+        <a class="brand" href="#home">GTG</a>
+
+        <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav class="nav" id="primary-nav">
+          <a href="#home">Home</a>
+          <a href="#shop">Shop</a>
+          <a href="#fragrances">Fragrances</a>
+          <a href="#about">About Us</a>
+          <a href="#blog">Blog</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="top-actions">
+          <button class="icon-btn" aria-label="Search">&#128269;</button>
+          <a class="btn btn-small" href="#shop">Shop Now</a>
+        </div>
+      </header>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="pill">Awarded the best perfume in the world</p>
+        <h1>Live your best life.</h1>
+        <div class="stats">
+          <div><strong>10x</strong><span>power</span></div>
+          <div><strong>9</strong><span>ingredients</span></div>
+          <div><strong>20K+</strong><span>happy customers</span></div>
+        </div>
+        <a class="btn" href="#shop">Shop Now</a>
+      </div>
+    </section>
+
+    <section class="product reveal" id="shop">
+      <div class="gallery">
+        <div class="gallery-main">
+          <img id="mainProductImage" src="a206a3992f8dd3b83e58b96d68af3ba37d448aff.png" alt="Main product" />
+          <button class="gallery-nav prev" type="button" data-dir="-1" aria-label="Previous image">&#8592;</button>
+          <button class="gallery-nav next" type="button" data-dir="1" aria-label="Next image">&#8594;</button>
+          <div class="dots" id="galleryDots"></div>
+        </div>
+        <div class="thumb-grid" id="thumbGrid"></div>
+      </div>
+
+      <article class="product-card">
+        <h2>GTG Perfumes</h2>
+        <p class="rating">&#9733; &#9733; &#9733; &#9733; &#9733; <small>4.7 (999+ reviews)</small></p>
+        <p class="lead">
+          Experience the timeless allure backed by modern artistry. Crafted for those who seek
+          to elevate their essence with purpose and sophistication.
+        </p>
+
+        <div class="plan-wrap">
+          <header>Most Popular</header>
+
+          <label class="plan-row active" data-plan="single">
+            <input type="radio" name="plan" value="single" checked />
+            <span>Single Subscription</span>
+            <b id="singlePrice">$99.99</b>
+            <em>$146</em>
+          </label>
+
+          <div class="fragrance-block">
+            <p>Choose a Fragrance</p>
+            <div class="fragrance-list" id="fragranceList"></div>
+          </div>
+
+          <div class="included">
+            <p>What's Included:</p>
+            <div class="included-grid">
+              <div class="box">
+                <h4>Every 30 Days</h4>
+                <img id="monthlyBottle" src="a206a3992f8dd3b83e58b96d68af3ba37d448aff.png" alt="Monthly bottle" />
+              </div>
+              <div class="box">
+                <h4>One Time <span>(Free)</span></h4>
+                <div class="mini-bottles" id="freeBottles"></div>
+              </div>
+            </div>
+            <ul>
+              <li>1 bottle shipped monthly</li>
+              <li>Free sampler for all available fragrances</li>
+              <li>50% off shipping</li>
+              <li>Pause or cancel any time after 3 months minimum</li>
+              <li>28-day money-back guarantee</li>
+            </ul>
+          </div>
+
+          <label class="plan-row" data-plan="double">
+            <input type="radio" name="plan" value="double" />
+            <span>Double Subscription</span>
+            <b id="doublePrice">$169.99</b>
+            <em>$246</em>
+          </label>
+        </div>
+
+        <button class="btn cart" id="addToCart">Add to Cart</button>
+        <p class="cart-note" id="cartNote">Select a fragrance and plan to continue.</p>
+      </article>
+    </section>
+
+    <section class="collection reveal" id="fragrances">
+      <div class="accordion-zone">
+        <h2>Our Collection</h2>
+
+        <div class="accordion-item open">
+          <button class="accordion-head" type="button">
+            Signature Scents
+            <span>-</span>
+          </button>
+          <div class="accordion-body">
+            Discover our curated line of signature perfumes, designed to become your daily companion.
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-head" type="button">
+            Citrus Series
+            <span>+</span>
+          </button>
+          <div class="accordion-body">
+            Lively citrus notes that bring fresh, bright energy to your everyday routine.
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-head" type="button">
+            Floral Reserve
+            <span>+</span>
+          </button>
+          <div class="accordion-body">
+            Elegant blossoms and soft undertones for a graceful yet modern profile.
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-head" type="button">
+            Night Oud
+            <span>+</span>
+          </button>
+          <div class="accordion-body">
+            Bold, mysterious accords suited for evenings and statement moments.
+          </div>
+        </div>
+      </div>
+
+      <div class="collection-media">
+        <img src="60a31355ad8d95a8a0b6a7d8d5cbfff286a9dbe8.jpg" alt="Dummy fragrance lifestyle" />
+      </div>
+    </section>
+
+    <section class="percent-strip reveal">
+      <div><strong>84%</strong><p>users reported all-day freshness</p></div>
+      <div><strong>78%</strong><p>noticed stronger projection in 7 days</p></div>
+      <div><strong>89%</strong><p>felt better scent layering with GTG</p></div>
+      <div><strong>90%</strong><p>would recommend to a friend</p></div>
+    </section>
+
+    <section class="comparison reveal" id="blog">
+      <p class="eyebrow">---</p>
+      <h2>From Our Blog</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Topic</th>
+              <th>Read Time</th>
+              <th>Category</th>
+              <th>Published</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>How to choose your daily scent profile</td><td>4 min</td><td>Guide</td><td>March 2026</td></tr>
+            <tr><td>Layering tips for longer-lasting perfumes</td><td>6 min</td><td>Tutorial</td><td>March 2026</td></tr>
+            <tr><td>Understanding notes: top, middle, and base</td><td>5 min</td><td>Education</td><td>February 2026</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="comparison reveal" id="about">
+      <p class="eyebrow">---</p>
+      <h2>Why GTG is the #1 Choice</h2>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Qualities</th>
+              <th class="winner">GTG</th>
+              <th>Arose</th>
+              <th>Bella</th>
+              <th>Daisies</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Potency Concentration</td><td class="winner">10x</td><td>1x</td><td>1x</td><td>10x</td></tr>
+            <tr><td>Longevity</td><td class="winner">&#10003;</td><td>&#10005;</td><td>&#10005;</td><td>&#10003;</td></tr>
+            <tr><td>Sillage</td><td class="winner">&#10003;</td><td>&#10005;</td><td>&#10005;</td><td>&#10005;</td></tr>
+            <tr><td>Bottle Design Score</td><td class="winner">9</td><td>5</td><td>6</td><td>2</td></tr>
+            <tr><td>Blend and Harmony</td><td class="winner">&#10003;</td><td>&#10005;</td><td>&#10005;</td><td>&#10005;</td></tr>
+            <tr><td>Skin Compatibility</td><td class="winner">&#10003;</td><td>&#10005;</td><td>&#10005;</td><td>&#10005;</td></tr>
+            <tr><td>Scent Profile</td><td class="winner">&#10003;</td><td>&#10003;</td><td>&#10005;</td><td>&#10005;</td></tr>
+            <tr><td>Price vs. Quality</td><td class="winner">&#10003;</td><td>&#10003;</td><td>&#10005;</td><td>&#10003;</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <a class="btn" href="#shop">Try It Risk-Free</a>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="footer-links">
+      <h3>GTG</h3>
+      <a href="#home">Home</a>
+      <a href="#shop">Shop</a>
+      <a href="#fragrances">Fragrances</a>
+      <a href="#about">About Us</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contact</a>
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+      <a href="#">X</a>
+    </div>
+
+    <form class="newsletter" id="newsletterForm" novalidate>
+      <p>Join our newsletter to stay up to date on features and releases.</p>
+      <div class="newsletter-row">
+        <input type="email" id="newsletterEmail" placeholder="Enter your email" required />
+        <button type="submit">Subscribe</button>
+      </div>
+      <small id="newsletterMsg">By subscribing, you agree to our Privacy Policy.</small>
+    </form>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
